@@ -19,6 +19,7 @@
 // controller and writes to the GPIO pins.  The GPIO pins drive an external
 // circuit which interfaces to the game console.
 
+#include <errno.h>
 #include <fcntl.h>
 #include <linux/joystick.h>
 #include <pigpio.h>
