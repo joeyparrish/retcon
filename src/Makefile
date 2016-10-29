@@ -23,3 +23,6 @@ all: controller
 
 controller: controller.o
 	$(CXX) $< -o $@ $(LDFLAGS)
+
+clean:
+	rm -f controller *.o
