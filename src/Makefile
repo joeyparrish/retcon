@@ -16,16 +16,16 @@
 CXXFLAGS = -std=c++11 -O3 -Wall
 LDFLAGS =
 
-all: controller sixpair
+all: retcon sixpair
 
 %.o: %.cc
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-controller: controller.o
+retcon: retcon.o
 	$(CXX) $< -o $@ $(LDFLAGS) -lpigpio -lrt -lpthread
 
 sixpair: sixpair.o
 	$(CXX) $< -o $@ $(LDFLAGS) -lusb
 
 clean:
-	rm -f controller sixpair *.o
+	rm -f retcon sixpair *.o
