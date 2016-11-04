@@ -56,7 +56,7 @@ void set_master(usb_dev_handle *devh, int itfnum, int mac[6]) {
 
 void process_device(int argc, char **argv, struct usb_device *dev,
 		    struct usb_config_descriptor *cfg, int itfnum) {
-  int mac[6], have_mac=0;
+  int mac[6];
 
   usb_dev_handle *devh = usb_open(dev);
   if ( ! devh ) fatal("usb_open");

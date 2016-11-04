@@ -13,7 +13,8 @@
 # You should have received a copy of the GNU General Public License
 # along with RetCon.  If not, see <http://www.gnu.org/licenses/>.
 
-CXXFLAGS = -std=c++11 -O3 -Wall
+CXXFLAGS += -std=c++11 -O3 -Wall
+CFLAGS += -O3 -Wall
 LDFLAGS =
 
 all: retcon sixpair
@@ -22,10 +23,17 @@ all: retcon sixpair
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 retcon: retcon.o
-	$(CXX) $< -o $@ $(LDFLAGS) -lpigpio -lrt -lpthread
+	$(CXX) $< -o $@ $(LDFLAGS) -lpigpio -lpthread
 
 sixpair: sixpair.o
 	$(CXX) $< -o $@ $(LDFLAGS) -lusb
+
+install: all
+	install -o root -m 0755 -d $(DESTDIR)/usr/sbin
+	install -o root -m 0755 retcon $(DESTDIR)/usr/sbin/retcon
+	install -o root -m 0755 sixpair $(DESTDIR)/usr/sbin/sixpair
+	install -o root -m 0755 -d $(DESTDIR)/lib/udev/rules.d
+	install -o root -m 0644 sixpair.rules $(DESTDIR)/lib/udev/rules.d/66-sixpair.rules
 
 clean:
 	rm -f retcon sixpair *.o

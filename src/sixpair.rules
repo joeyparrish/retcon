@@ -1,0 +1,2 @@
+# /etc/udev/rules.d/66-sixpair.rules
+DRIVER=="usb", SUBSYSTEM=="usb", ATTR{idVendor}=="054c", ATTR{idProduct}=="0268", RUN+="/usr/sbin/sixpair"

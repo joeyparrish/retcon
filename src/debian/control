@@ -1,0 +1,15 @@
+Source: retcon
+Section: utils
+Priority: optional
+Maintainer: Joey Parrish <joey.parrish@gmail.com>
+Build-Depends: debhelper (>= 8.0.0),
+               libusb-dev (>= 0.1.12),
+               pigpio (>= 1.30)
+Standards-Version: 3.9.4
+Homepage: https://github.com/cashpipeplusplus/retcon
+
+Package: retcon
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, bluez (>= 5.23)
+Description: Retro Console Controller for Raspberry Pi
+ Use comfortable wireless PS3 controller on your old Sega or Nintendo system.

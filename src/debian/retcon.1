@@ -1,0 +1,17 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" (C) Copyright 2016 Joey Parrish <joey.parrish@gmail.com>,
+.TH RETCON 1 "November  3, 2016"
+.\" Please adjust this date whenever revising the manpage.
+.SH NAME
+retcon \- Retro Console Controller
+.SH SYNOPSIS
+.B retcon
+.SH DESCRIPTION
+The
+.B retcon
+server reads from /dev/input/js* and translates those events to
+GPIO pins on the Raspberry Pi.  From there, an external circuit
+interfaces with the game console.
+.SH OPTIONS
+There are currently no options.  This should start automatically
+on boot.

@@ -1,0 +1,7 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: retcon
+Source: https://github.com/cashpipeplusplus/retcon
+
+Files: *
+Copyright: 2016 Joey Parrish <joey.parrish@gmail.com>
+License: GPL-3+

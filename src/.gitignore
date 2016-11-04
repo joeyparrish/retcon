@@ -1,3 +1,9 @@
 *.o
 retcon
 sixpair
+debian/files
+debian/retcon.debhelper.log
+debian/retcon.postinst.debhelper
+debian/retcon.postrm.debhelper
+debian/retcon.prerm.debhelper
+debian/retcon.substvars
