@@ -13,16 +13,19 @@
 # You should have received a copy of the GNU General Public License
 # along with RetCon.  If not, see <http://www.gnu.org/licenses/>.
 
-CXXFLAGS := -std=c++11 -O3 -Wall
-LDFLAGS := -lpigpio -lrt -lpthread
+CXXFLAGS = -std=c++11 -O3 -Wall
+LDFLAGS =
 
-all: controller
+all: controller sixpair
 
 %.o: %.cc
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 controller: controller.o
-	$(CXX) $< -o $@ $(LDFLAGS)
+	$(CXX) $< -o $@ $(LDFLAGS) -lpigpio -lrt -lpthread
+
+sixpair: sixpair.o
+	$(CXX) $< -o $@ $(LDFLAGS) -lusb
 
 clean:
-	rm -f controller *.o
+	rm -f controller sixpair *.o
