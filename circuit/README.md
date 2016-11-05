@@ -5,8 +5,10 @@ to the game console.
 These files were created with the free version of [Eagle][] v7.7.0.
 
  - sega.sch (Eagle Schematic)
- - sega.png (screenshot of the schematic)
+ - sega.sch.1.png (screenshot of the schematic)
+ - sega.sch.2.png (screenshot of the schematic)
  - sega.brd (Eagle Board)
+ - sega.brd.png (screenshot of the board)
 
 The board file can be uploaded directly to [DirtyPCBs][] to be printed.
 
