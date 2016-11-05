@@ -5,8 +5,8 @@
 # Required-Stop:     $local_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Retro Console Controller
-# Description:       Retro Console Controller
+# Short-Description: Trusting Steed
+# Description:       Trusting Steed
 ### END INIT INFO
 
 # Author: Joey Parrish <joey.parrish@gmail.com>
