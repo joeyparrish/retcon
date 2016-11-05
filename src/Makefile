@@ -32,6 +32,7 @@ install: all
 	install -o root -m 0755 -d $(DESTDIR)/usr/sbin
 	install -o root -m 0755 retcon $(DESTDIR)/usr/sbin/retcon
 	install -o root -m 0755 sixpair $(DESTDIR)/usr/sbin/sixpair
+	install -o root -m 0755 trusting-steed $(DESTDIR)/usr/sbin/trusting-steed
 	install -o root -m 0755 -d $(DESTDIR)/lib/udev/rules.d
 	install -o root -m 0644 sixpair.rules $(DESTDIR)/lib/udev/rules.d/66-sixpair.rules
 

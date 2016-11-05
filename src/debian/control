@@ -10,6 +10,10 @@ Homepage: https://github.com/cashpipeplusplus/retcon
 
 Package: retcon
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, bluez (>= 5.23)
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         bluez (>= 5.23),
+         python-gobject (>= 3.14.0),
+         python-dbus (>= 1.2.0)
 Description: Retro Console Controller for Raspberry Pi
  Use comfortable wireless PS3 controller on your old Sega or Nintendo system.

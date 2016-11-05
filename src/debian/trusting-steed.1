@@ -1,0 +1,17 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" (C) Copyright 2016 Joey Parrish <joey.parrish@gmail.com>,
+.TH TRUSTING\-STEED 1 "November  5, 2016"
+.\" Please adjust this date whenever revising the manpage.
+.SH NAME
+trusting\-steed \- Trust all bluetooth gamepads
+.SH SYNOPSIS
+.B trusting\-steed
+.SH DESCRIPTION
+The
+.B trusting\-steed
+deamon listens for D-Bus messages that indicate a new bluetooth gamepad is
+available.  When a new gamepad shows up, trusting\-steed automatically marks
+it as trusted and instructs the bluetooth host to try to connect to it.
+.SH OPTIONS
+There are currently no options.  This should start automatically
+on boot.

@@ -1,0 +1,118 @@
+#!/usr/bin/env python
+
+# This file is part of RetCon: Retro Console Controller.
+#
+# RetCon is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# RetCon is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with RetCon.  If not, see <http://www.gnu.org/licenses/>.
+
+"""Makes the bluetooth host discoverable and automatically trusts game controllers."""
+
+import dbus
+from dbus.mainloop.glib import DBusGMainLoop
+from gi.repository import GLib
+
+def BasicInterface(service_name, path, interface_name):
+  bus = dbus.SystemBus()
+  proxy = bus.get_object(service_name, path)
+  return dbus.Interface(proxy, interface_name)
+
+class PropertiesInterface(object):
+  def __init__(self, service_name, path, interface_name):
+    self._iface = BasicInterface(service_name, path, "org.freedesktop.DBus.Properties")
+    self._name = interface_name
+
+  def Set(self, key, value):
+    return self._iface.Set(self._name, key, value)
+
+  def Get(self, key):
+    return self._iface.Get(self._name, key)
+
+  def GetAll(self):
+    return self._iface.GetAll(self._name)
+
+def MakeHostDiscoverable():
+  hostProps = PropertiesInterface("org.bluez", "/org/bluez/hci0", "org.bluez.Adapter1")
+  hostProps.Set("DiscoverableTimeout", dbus.UInt32(0))  # Never time out.
+  hostProps.Set("Discoverable", True)
+
+def Ignore(*args, **kwargs):
+  pass
+
+def OnInterfacesAdded(device_path, interface_dictionary):
+  device_properties = interface_dictionary.get("org.bluez.Device1")
+
+  # Only handle bluetooth devices.
+  if not device_properties:
+    return
+
+  # Only handle game controllers.
+  if device_properties.get("Icon") != "input-gaming":
+    return
+
+  print "Found", device_path
+
+  # Ignore if it's already trusted.
+  if device_properties.get("Trusted") == True:
+    print "Already trusted", device_path
+    return
+
+  # Get a handle to the device and its properties.
+  device = BasicInterface("org.bluez", device_path, "org.bluez.Device1")
+  deviceProps = PropertiesInterface("org.bluez", device_path, "org.bluez.Device1")
+
+  # Mark it as trusted.
+  deviceProps.Set("Trusted", True)
+  print "Trusted", device_path
+
+  # Connect to the device.
+  device.Connect(reply_handler=Ignore, error_handler=Ignore)
+  print "Connected", device_path
+
+if __name__ == "__main__":
+  # Create glib main loop, which is required to receive signals from the bus.
+  DBusGMainLoop(set_as_default=True)
+  loop = GLib.MainLoop()
+
+  # Make the host controller discoverable.
+  MakeHostDiscoverable()
+
+  # Listen for new interfaces and automatically trust game controllers.
+  bus = dbus.SystemBus()
+  bus.add_signal_receiver(OnInterfacesAdded,
+                          dbus_interface="org.freedesktop.DBus.ObjectManager",
+                          signal_name="InterfacesAdded")
+  loop.run()
+
+"""
+'org.freedesktop.DBus.ObjectManager', 'InterfacesAdded', (
+  dbus.ObjectPath('/org/bluez/hci0/dev_00_21_4F_76_44_75'),
+  dbus.Dictionary({
+    dbus.String(u'org.freedesktop.DBus.Introspectable'): dbus.Dictionary({
+    }, signature=dbus.Signature('sv')),
+    dbus.String(u'org.freedesktop.DBus.Properties'): dbus.Dictionary({}, signature=dbus.Signature('sv')),
+    dbus.String(u'org.bluez.Device1'): dbus.Dictionary({
+      dbus.String(u'Paired'): dbus.Boolean(False, variant_level=1),
+      dbus.String(u'Adapter'): dbus.ObjectPath('/org/bluez/hci0', variant_level=1),
+      dbus.String(u'LegacyPairing'): dbus.Boolean(False, variant_level=1),
+      dbus.String(u'Alias'): dbus.String(u'00-21-4F-76-44-75', variant_level=1),
+      dbus.String(u'Connected'): dbus.Boolean(True, variant_level=1),
+      dbus.String(u'UUIDs'): dbus.Array([], signature=dbus.Signature('s'), variant_level=1),
+      dbus.String(u'Address'): dbus.String(u'00:21:4F:76:44:75', variant_level=1),
+      dbus.String(u'Blocked'): dbus.Boolean(False, variant_level=1),
+      dbus.String(u'Class'): dbus.UInt32(1288L, variant_level=1),
+      dbus.String(u'Trusted'): dbus.Boolean(False, variant_level=1),
+      dbus.String(u'Icon'): dbus.String(u'input-gaming', variant_level=1)
+    }, signature=dbus.Signature('sv'))
+  }, signature=dbus.Signature('sa{sv}'))
+)
+"""
