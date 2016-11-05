@@ -13,6 +13,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
          bluez (>= 5.23),
+         pigpio (>= 1.30),
          python-gobject (>= 3.14.0),
          python-dbus (>= 1.2.0)
 Description: Retro Console Controller for Raspberry Pi
