@@ -6279,6 +6279,7 @@ Source: Digi-Key, subd.pdf</description>
 <part name="R16" library="resistor" deviceset="R-US_" device="0207/10" value="750"/>
 <part name="C1" library="capacitor-wima" deviceset="C" device="5/2.5" value="100nF"/>
 <part name="X" library="con-subd" deviceset="F09?S" device="H"/>
+<part name="R17" library="resistor" deviceset="R-US_" device="0207/10" value="10k"/>
 </parts>
 <sheets>
 <sheet>
@@ -6306,7 +6307,7 @@ Source: Digi-Key, subd.pdf</description>
 <instance part="OK2" gate="D" x="-60.96" y="-45.72"/>
 <instance part="GND2" gate="1" x="-50.8" y="-53.34"/>
 <instance part="GND3" gate="1" x="30.48" y="-40.64" rot="R270"/>
-<instance part="P+2" gate="VCC" x="27.94" y="-53.34" rot="R90"/>
+<instance part="P+2" gate="VCC" x="12.7" y="-53.34" rot="R90"/>
 <instance part="R9" gate="G$1" x="-86.36" y="63.5" rot="R180"/>
 <instance part="R10" gate="G$1" x="-86.36" y="48.26" rot="R180"/>
 <instance part="R11" gate="G$1" x="-86.36" y="33.02" rot="R180"/>
@@ -6325,6 +6326,7 @@ Source: Digi-Key, subd.pdf</description>
 <instance part="X" gate="-7" x="66.04" y="-33.02"/>
 <instance part="X" gate="-8" x="66.04" y="-40.64"/>
 <instance part="X" gate="-9" x="66.04" y="-12.7"/>
+<instance part="R17" gate="G$1" x="22.86" y="-40.64" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -6424,10 +6426,13 @@ Source: Digi-Key, subd.pdf</description>
 <pinref part="P+2" gate="VCC" pin="VCC"/>
 <wire x1="63.5" y1="-53.34" x2="43.18" y2="-53.34" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="2"/>
-<wire x1="43.18" y1="-53.34" x2="30.48" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="-53.34" x2="22.86" y2="-53.34" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-53.34" x2="15.24" y2="-53.34" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="-50.8" x2="43.18" y2="-53.34" width="0.1524" layer="91"/>
 <junction x="43.18" y="-53.34"/>
 <pinref part="X" gate="-5" pin="F"/>
+<pinref part="R17" gate="G$1" pin="2"/>
+<wire x1="22.86" y1="-45.72" x2="22.86" y2="-53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="A" class="0">
@@ -6583,12 +6588,15 @@ Source: Digi-Key, subd.pdf</description>
 </net>
 <net name="SEL" class="0">
 <segment>
-<wire x1="63.5" y1="-33.02" x2="20.32" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="-33.02" x2="22.86" y2="-33.02" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="-33.02" x2="20.32" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="-33.02" x2="20.32" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="MUX" gate="A" pin="!A!/B"/>
 <wire x1="20.32" y1="-20.32" x2="22.86" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="X" gate="-7" pin="F"/>
 <label x="55.88" y="-33.02" size="1.778" layer="95"/>
+<pinref part="R17" gate="G$1" pin="1"/>
+<wire x1="22.86" y1="-35.56" x2="22.86" y2="-33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
