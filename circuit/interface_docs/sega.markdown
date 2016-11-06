@@ -65,3 +65,10 @@ controller is connected to a Master System.
 |7  |+5V (from console)        |+5V (from console)           |
 |8  |Ground (from console)     |Ground (from console)        |
 |9  |C Button                  |Start Button                 |
+
+
+### External References
+
+ - http://gamesx.com/wiki/doku.php?id=controls:megadrive\_genesis\_controller\_3
+ - http://www.haku.co.uk/pics/SegaJoypadPinout.jpg
+ - https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
