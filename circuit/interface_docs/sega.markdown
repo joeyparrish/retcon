@@ -69,6 +69,6 @@ controller is connected to a Master System.
 
 ### External References
 
- - http://gamesx.com/wiki/doku.php?id=controls:megadrive\_genesis\_controller\_3
+ - http://gamesx.com/wiki/doku.php?id=controls:megadrive_genesis_controller_3
  - http://www.haku.co.uk/pics/SegaJoypadPinout.jpg
  - https://www.cs.cmu.edu/~chuck/infopg/segasix.txt
