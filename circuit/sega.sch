@@ -6343,6 +6343,8 @@ Source: Digi-Key, subd.pdf</description>
 <pinref part="MUX" gate="A" pin="1A"/>
 <pinref part="MUX" gate="A" pin="2A"/>
 <pinref part="MUX" gate="A" pin="G"/>
+<junction x="12.7" y="-2.54"/>
+<junction x="12.7" y="-22.86"/>
 </segment>
 <segment>
 <pinref part="OK2" gate="D" pin="EMIT"/>
@@ -6370,6 +6372,13 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="-53.34" y1="-17.78" x2="-50.8" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="OK2" gate="C" pin="EMIT"/>
 <wire x1="-53.34" y1="-33.02" x2="-50.8" y2="-33.02" width="0.1524" layer="91"/>
+<junction x="-50.8" y="43.18"/>
+<junction x="-50.8" y="27.94"/>
+<junction x="-50.8" y="12.7"/>
+<junction x="-50.8" y="-2.54"/>
+<junction x="-50.8" y="-17.78"/>
+<junction x="-50.8" y="-33.02"/>
+<junction x="-50.8" y="-48.26"/>
 </segment>
 <segment>
 <wire x1="63.5" y1="-40.64" x2="43.18" y2="-40.64" width="0.1524" layer="91"/>
@@ -6392,6 +6401,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="-40.64" y1="58.42" x2="63.5" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="X" gate="-1" pin="F"/>
 <label x="55.88" y="58.42" size="1.778" layer="95"/>
+<junction x="-40.64" y="63.5"/>
 </segment>
 </net>
 <net name="VCC" class="0">
@@ -6433,6 +6443,7 @@ Source: Digi-Key, subd.pdf</description>
 <pinref part="X" gate="-5" pin="F"/>
 <pinref part="R17" gate="G$1" pin="2"/>
 <wire x1="22.86" y1="-45.72" x2="22.86" y2="-53.34" width="0.1524" layer="91"/>
+<junction x="22.86" y="-53.34"/>
 </segment>
 </net>
 <net name="A" class="0">
@@ -6447,6 +6458,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="2.54" y1="-2.54" x2="2.54" y2="-7.62" width="0.1524" layer="91"/>
 <pinref part="MUX" gate="A" pin="3A"/>
 <wire x1="2.54" y1="-7.62" x2="22.86" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="-40.64" y="2.54"/>
 </segment>
 </net>
 <net name="R" class="0">
@@ -6461,6 +6473,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="5.08" y1="-5.08" x2="5.08" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="5.08" y1="12.7" x2="-40.64" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="12.7" x2="-40.64" y2="17.78" width="0.1524" layer="91"/>
+<junction x="-40.64" y="17.78"/>
 </segment>
 </net>
 <net name="L" class="0">
@@ -6475,6 +6488,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="7.62" y1="27.94" x2="7.62" y2="0" width="0.1524" layer="91"/>
 <pinref part="MUX" gate="A" pin="1B"/>
 <wire x1="7.62" y1="0" x2="22.86" y2="0" width="0.1524" layer="91"/>
+<junction x="-40.64" y="33.02"/>
 </segment>
 </net>
 <net name="D" class="0">
@@ -6488,6 +6502,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="-40.64" y1="43.18" x2="63.5" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="X" gate="-2" pin="F"/>
 <label x="55.88" y="43.18" size="1.778" layer="95"/>
+<junction x="-40.64" y="48.26"/>
 </segment>
 </net>
 <net name="B" class="0">
@@ -6502,6 +6517,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="2.54" y1="-10.16" x2="2.54" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="-17.78" x2="-40.64" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="-40.64" y1="-17.78" x2="-40.64" y2="-12.7" width="0.1524" layer="91"/>
+<junction x="-40.64" y="-12.7"/>
 </segment>
 </net>
 <net name="S" class="0">
@@ -6516,6 +6532,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="5.08" y1="-33.02" x2="5.08" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="MUX" gate="A" pin="4A"/>
 <wire x1="5.08" y1="-12.7" x2="22.86" y2="-12.7" width="0.1524" layer="91"/>
+<junction x="-40.64" y="-27.94"/>
 </segment>
 </net>
 <net name="C" class="0">
@@ -6530,6 +6547,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="7.62" y1="-48.26" x2="7.62" y2="-15.24" width="0.1524" layer="91"/>
 <pinref part="MUX" gate="A" pin="4B"/>
 <wire x1="7.62" y1="-15.24" x2="22.86" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="-40.64" y="-43.18"/>
 </segment>
 </net>
 <net name="PI_GND" class="0">
@@ -6560,6 +6578,13 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="-104.14" y1="-55.88" x2="-76.2" y2="-55.88" width="0.1524" layer="91"/>
 <wire x1="-76.2" y1="-55.88" x2="-76.2" y2="-48.26" width="0.1524" layer="91"/>
 <label x="-101.6" y="-55.88" size="1.778" layer="95"/>
+<junction x="-76.2" y="-48.26"/>
+<junction x="-76.2" y="-33.02"/>
+<junction x="-76.2" y="-17.78"/>
+<junction x="-76.2" y="-2.54"/>
+<junction x="-76.2" y="12.7"/>
+<junction x="-76.2" y="27.94"/>
+<junction x="-76.2" y="43.18"/>
 </segment>
 </net>
 <net name="G|L" class="0">
@@ -6597,6 +6622,7 @@ Source: Digi-Key, subd.pdf</description>
 <label x="55.88" y="-33.02" size="1.778" layer="95"/>
 <pinref part="R17" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="-35.56" x2="22.86" y2="-33.02" width="0.1524" layer="91"/>
+<junction x="22.86" y="-33.02"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -6765,6 +6791,11 @@ Source: Digi-Key, subd.pdf</description>
 <pinref part="PI" gate="1" pin="14"/>
 <pinref part="PI" gate="1" pin="20"/>
 <pinref part="PI" gate="1" pin="25"/>
+<junction x="43.18" y="15.24"/>
+<junction x="43.18" y="-5.08"/>
+<junction x="76.2" y="2.54"/>
+<junction x="76.2" y="10.16"/>
+<junction x="76.2" y="20.32"/>
 </segment>
 </net>
 <net name="N$1" class="0">
