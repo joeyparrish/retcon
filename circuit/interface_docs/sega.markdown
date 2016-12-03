@@ -32,9 +32,9 @@ pulled high in the controller and pushing a button connects the pin to ground.
 |2  |Down                 |
 |3  |Left                 |
 |4  |Right                |
-|5  |(not used)           |
+|5  |+5V (from console)   |
 |6  |Button 1             |
-|7  |+5V (from console)   |
+|7  |(not used)           |
 |8  |Ground (from console)|
 |9  |Button 2             |
 
@@ -60,9 +60,9 @@ controller is connected to a Master System.
 |2  |Down                      |Down                         |
 |3  |Left                      |Ground                       |
 |4  |Right                     |Ground                       |
-|5  |Select (from console, +5V)|Select (from console, ground)|
+|5  |+5V (from console)        |+5V (from console)           |
 |6  |B Button                  |A Button                     |
-|7  |+5V (from console)        |+5V (from console)           |
+|7  |Select (from console, +5V)|Select (from console, ground)|
 |8  |Ground (from console)     |Ground (from console)        |
 |9  |C Button                  |Start Button                 |
 
