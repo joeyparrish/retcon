@@ -69,8 +69,7 @@ do_stop()
 	#   other if a failure occurred
 	start-stop-daemon --stop --quiet \
 	  --retry=TERM/30/KILL/5 \
-	  --pidfile $PIDFILE --remove-pidfile \
-	  --name $NAME
+	  --pidfile $PIDFILE --remove-pidfile
 }
 
 case "$1" in
