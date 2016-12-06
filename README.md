@@ -1,4 +1,6 @@
-# RetCon: Retro Console Controller
+![RetCon](logo.png)
+
+# Retro Console Controller
 
 Use comfortable wireless PS3 controllers on your old Sega or Nintendo system.
 
