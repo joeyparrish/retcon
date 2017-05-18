@@ -15,8 +15,10 @@
 |L1        |-             |-       |-      |TL     |32          |29           |
 |R1        |-             |-       |-      |TR     |28          |31           |
 |L2        |-             |-       |-      |-      |-           |-            |
-|R2        |-             |C       |-      |-      |22          |7            |
+|R2        |-             |C²      |-      |A      |22²         |7²           |
 |L3        |-             |-       |-      |-      |-           |-            |
 |R3        |-             |-       |-      |-      |-           |-            |
 
 ¹: D-pad pins in the order of Up, Down, Left, Right
+
+²: Alternate binding for C on Genesis, for convenience
