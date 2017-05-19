@@ -6190,15 +6190,15 @@ Source: Digi-Key, subd.pdf</description>
 <modules>
 <module name="P" prefix="" dx="30.48" dy="20.32">
 <ports>
-<port name="PI_A" side="right" coord="10.16" direction="io"/>
-<port name="PI_B" side="right" coord="7.62" direction="io"/>
-<port name="PI_C" side="right" coord="5.08" direction="io"/>
-<port name="PI_D" side="right" coord="2.54" direction="io"/>
-<port name="PI_GND" side="right" coord="0" direction="io"/>
-<port name="PI_L" side="right" coord="-2.54" direction="io"/>
-<port name="PI_R" side="right" coord="-5.08" direction="io"/>
-<port name="PI_S" side="right" coord="-7.62" direction="io"/>
-<port name="PI_U" side="right" coord="-10.16" direction="io"/>
+<port name="PI_A" side="right" coord="10.16" direction="in"/>
+<port name="PI_B" side="right" coord="7.62" direction="in"/>
+<port name="PI_C" side="right" coord="5.08" direction="in"/>
+<port name="PI_D" side="right" coord="2.54" direction="in"/>
+<port name="PI_L" side="right" coord="-2.54" direction="in"/>
+<port name="PI_R" side="right" coord="-5.08" direction="in"/>
+<port name="PI_S" side="right" coord="-7.62" direction="in"/>
+<port name="PI_U" side="right" coord="-10.16" direction="in"/>
+<port name="GND" side="right" coord="0" direction="pwr"/>
 </ports>
 <variantdefs>
 </variantdefs>
@@ -6226,7 +6226,7 @@ Source: Digi-Key, subd.pdf</description>
 <part name="R15" library="resistor" deviceset="R-US_" device="0207/10" value="3.3k"/>
 <part name="R16" library="resistor" deviceset="R-US_" device="0207/10" value="3.3k"/>
 <part name="C1" library="capacitor-wima" deviceset="C" device="5/2.5" value="100nF"/>
-<part name="X" library="con-subd" deviceset="F09?S" device="H"/>
+<part name="X" library="con-subd" deviceset="F09?S" device="H" value="-"/>
 <part name="R17" library="resistor" deviceset="R-US_" device="0207/10" value="10k"/>
 <part name="Q1" library="transistor-npn" deviceset="2N3904" device=""/>
 <part name="Q2" library="transistor-npn" deviceset="2N3904" device=""/>
@@ -6394,6 +6394,13 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="-27.94" y1="48.26" x2="-22.86" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-27.94" y1="63.5" x2="-22.86" y2="63.5" width="0.1524" layer="91"/>
+<junction x="-22.86" y="48.26"/>
+<junction x="-22.86" y="63.5"/>
+<junction x="-22.86" y="33.02"/>
+<junction x="-22.86" y="17.78"/>
+<junction x="-22.86" y="2.54"/>
+<junction x="-22.86" y="-12.7"/>
+<junction x="-22.86" y="-27.94"/>
 </segment>
 <segment>
 <pinref part="P+2" gate="VCC" pin="VCC"/>
@@ -6707,7 +6714,7 @@ Source: Digi-Key, subd.pdf</description>
 <busses>
 </busses>
 <nets>
-<net name="N$2" class="0">
+<net name="GND" class="0">
 <segment>
 <wire x1="50.8" y1="-5.08" x2="43.18" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="-5.08" x2="43.18" y2="15.24" width="0.1524" layer="91"/>
@@ -6720,9 +6727,7 @@ Source: Digi-Key, subd.pdf</description>
 <wire x1="76.2" y1="2.54" x2="76.2" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="-30.48" x2="76.2" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="-30.48" x2="76.2" y2="2.54" width="0.1524" layer="91"/>
-<portref moduleinst="P2" port="PI_GND"/>
 <wire x1="43.18" y1="15.24" x2="17.78" y2="15.24" width="0.1524" layer="91"/>
-<portref moduleinst="P1" port="PI_GND"/>
 <wire x1="101.6" y1="7.62" x2="91.44" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="7.62" x2="91.44" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="91.44" y1="20.32" x2="76.2" y2="20.32" width="0.1524" layer="91"/>
@@ -6736,6 +6741,8 @@ Source: Digi-Key, subd.pdf</description>
 <junction x="76.2" y="2.54"/>
 <junction x="76.2" y="10.16"/>
 <junction x="76.2" y="20.32"/>
+<portref moduleinst="P1" port="GND"/>
+<portref moduleinst="P2" port="GND"/>
 </segment>
 </net>
 <net name="N$1" class="0">
