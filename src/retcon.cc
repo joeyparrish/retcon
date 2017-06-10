@@ -49,16 +49,21 @@ const std::vector<int> harmless_signals = {
 // the Raspberry Pi's GPIO pins.
 class Output {
  public:
-  // These represent Sega Genesis buttons.
+  // These represent GPIO outputs which map to both Sega and Nintendo buttons.
+  // See buttons.markdown for details.
   typedef enum {
     UP,
     DOWN,
     LEFT,
     RIGHT,
-    A,
-    B,
-    C,
+    SELECT,
     START,
+    A,  // A on Sega Genesis, Y on SNES, B on NES
+    B,  // B on Sega Genesis, B on SNES, A on NES, 1 on Sega Master System
+    C,  // C on Sega Genesis, A on SNES, 2 on Sega Master System
+    X,  // X on SNES
+    TOP_LEFT,
+    TOP_RIGHT,
   } Button;
 
   // Player 1, player 2
@@ -99,20 +104,28 @@ Output::Output()
         { DOWN, 24 },
         { LEFT, 23 },
         { RIGHT, 18 },
+        { SELECT, 20 },
+        { START, 15 },
         { A, 7 },
         { B, 8 },
         { C, 25 },
-        { START, 15 },
+        { X, 16 },
+        { TOP_LEFT, 12 },
+        { TOP_RIGHT, 1 },
       },
       {  // P2
         { UP, 9 },
         { DOWN, 17 },
         { LEFT, 27 },
         { RIGHT, 22 },
+        { SELECT, 11 },
+        { START, 10 },
         { A, 2 },
         { B, 3 },
         { C, 4 },
-        { START, 10 },
+        { X, 0 },
+        { TOP_LEFT, 5 },
+        { TOP_RIGHT, 6 },
       },
     }) {
   // Init GPIO.
@@ -284,12 +297,15 @@ PS3::PS3(Output::Player player, const char* path)
         { RIGHT, Output::RIGHT },
         { DOWN, Output::DOWN },
         { LEFT, Output::LEFT },
+        { SELECT, Output::SELECT },
+        { START, Output::START },
         { SQUARE, Output::A },
         { X, Output::B },
         { CIRCLE, Output::C },
+        { TRIANGLE, Output::X },
+        { L1, Output::TOP_LEFT },
+        { R1, Output::TOP_RIGHT },
         { R2, Output::C },  // Alternate C
-        { START, Output::START },
-        { TRIANGLE, Output::START },  // Alternate start
       }),
       stick_map_({
         { LEFT_ANALOG, {  // Alternate D-pad
@@ -418,10 +434,14 @@ Keyboard::Keyboard()
         { 'd', Output::DOWN },
         { 'l', Output::LEFT },
         { 'r', Output::RIGHT },
+        { 'e', Output::SELECT },
+        { 's', Output::START },
         { 'a', Output::A },
         { 'b', Output::B },
         { 'c', Output::C },
-        { 's', Output::START },
+        { 'x', Output::X },
+        { '<', Output::TOP_LEFT },
+        { '>', Output::TOP_RIGHT },
       }) {
   // Make stdin non-blocking.
   make_fd_nonblocking();
