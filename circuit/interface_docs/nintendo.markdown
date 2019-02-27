@@ -25,7 +25,7 @@ to ground.
 
 The serial interface works by latching all of the button states into a shift
 register, then clocking out each individual button state.  The button states
-form an 8-bit (NES) or 12-bit (SNES) word.
+form an 8-bit (NES) or 16-bit (SNES) word.
 
 |pin|signal               |NES color¹|SNES color¹|
 |---|---------------------|----------|-----------|
@@ -53,6 +53,10 @@ form an 8-bit (NES) or 12-bit (SNES) word.
 |9  |(not used)|X          |
 |10 |(not used)|L          |
 |11 |(not used)|R          |
+|12 |(not used)|(not used) |
+|13 |(not used)|(not used) |
+|14 |(not used)|(not used) |
+|15 |(not used)|(not used) |
 
 Any extra bits in the shift register's parallel input must be pulled high.
 
