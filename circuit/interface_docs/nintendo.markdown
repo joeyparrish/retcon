@@ -27,15 +27,17 @@ The serial interface works by latching all of the button states into a shift
 register, then clocking out each individual button state.  The button states
 form an 8-bit (NES) or 12-bit (SNES) word.
 
-|pin|signal               |
-|---|---------------------|
-|1  |Ground (from console)|
-|2  |(not used)           |
-|3  |(not used)           |
-|4  |Serial output        |
-|5  |Latch (from console) |
-|6  |Clock (from console) |
-|7  |+5V (from console)   |
+|pin|signal               |NES color¹|SNES color¹|
+|---|---------------------|----------|-----------|
+|1  |Ground (from console)|white     |black      |
+|2  |(not used)           |          |           |
+|3  |(not used)           |          |           |
+|4  |Serial output        |black     |red        |
+|5  |Latch (from console) |green     |yellow     |
+|6  |Clock (from console) |yellow    |blue       |
+|7  |+5V (from console)   |red       |green      |
+
+¹: In the extension cords I bought... YMMV
 
 |bit|NES button|SNES button|
 |---|----------|-----------|
