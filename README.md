@@ -4,6 +4,19 @@
 
 Use comfortable wireless PS3 controllers on your old Sega or Nintendo system.
 
+> :warning: **NOTE** :warning:: _**This project has been deprecated.**_
+> 
+> I bought receivers from 8bitdo that do much more than my homebrew project ever could, in a smaller space, for less money.
+> For example, here you can get a Sega Genesis receiver for bluetooth controllers that is tiny and powered by the Sega itself: https://www.8bitdo.com/retro-receiver-genesis-mega-drive/
+> 
+> I had begun a redesign based on a microcontroller that I hoped would be powered by the console itself, and would use generic Bluetooth instead of PS3, but for $20 (as of Feb 2024) it's hard to beat what 8bitdo is doing.
+> 
+> Feel free to build off of this repo if you wish, but I'm abandoning it in favor of https://www.8bitdo.com/
+> 
+> -Joey
+
+-----
+
 The PS3 controllers pair with a Raspberry Pi, which translates the controller
 inputs to the game console through an external circuit.
 
